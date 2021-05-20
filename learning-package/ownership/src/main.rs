@@ -17,5 +17,24 @@ fn main() {
     let a1 = 3;
     let a2 = a1;
 
-    println!("{}, {}!", a1, a2)
+    println!("{}, {}!", a1, a2);
+
+    let s = String::from("Hello world!");
+    take_ownership(s);
+    /*
+        here if you want to print s, it will be panic because s has no ownership!
+        println!("s: {}", s);
+     */
+
+    let x = 5;
+    makes_copy(x);
+    println!("x: {}", x);
+}
+
+fn take_ownership(some_sthing: String){
+    println!("{}", some_sthing)
+}
+
+fn makes_copy(some_number: i32) {
+    println!("{}", some_number)
 }
